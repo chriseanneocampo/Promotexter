@@ -6,18 +6,15 @@ app.use(bodyParser.json());
 
 let items = [];
 
-// Create
-function addToDoItem(item) {
-    app.post('https://jsonplaceholder.typicode.com/todos', (req, res) => {
-        items.push(newItem);
-        res.status(201).json(item);
-    });
-}
+// POST Function to add a new item in To Do List
+app.post(`/todos`, (req, res) => {
+    const newItem = req.body;
+    res.status(201).json(newItem);
+});
 
-// Read
-function getToDoList() {
-    app.get('https://jsonplaceholder.typicode.com/todos', (req, res) => {
-        res.json(items);
-    });
-}
+// GET Function to get all To Do List items
+app.get(`/todos`, (req, res) => {
+    res.json(items);
+});
 
+module.exports = app;
