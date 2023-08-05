@@ -1,0 +1,25 @@
+{
+  "name": "promotexter",
+  "version": "1.0.0",
+  "description": "CRUD App for Promotexter",
+  "main": "app.js",
+  "scripts": {
+    "test": "test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chriseanneocampo/Promotexter.git"
+  },
+  "author": "Chrise Anne Mae Ocampo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chriseanneocampo/Promotexter/issues"
+  },
+  "homepage": "https://github.com/chriseanneocampo/Promotexter#readme",
+  "devDependencies": {
+    "axios": "^1.4.0",
+    "chai": "^4.3.7",
+    "express": "^4.18.2",
+    "mocha": "^10.2.0"
+  }
+}
