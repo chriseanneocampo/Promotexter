@@ -1,20 +1,21 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const app = express();
+const axios = require('axios');
+const BASE_URL = 'https://jsonplaceholder.typicode.com';
 
-app.use(bodyParser.json());
-
-let items = [];
 
 // POST Function to add a new item in To Do List
-app.post(`/todos`, (req, res) => {
-    const newItem = req.body;
-    res.status(201).json(newItem);
-});
+function addNewItem(item) {
+    return axios.post(`${BASE_URL}/todos`, item)
+        .catch(error => {
+            throw new Error(`POST request error: ${error.message}`);
+        });
+}
 
 // GET Function to get all To Do List items
-app.get(`/todos`, (req, res) => {
-    res.json(items);
-});
+function getToDoList() {
+    return axios.get(`${BASE_URL}/todos`)
+        .catch(error => {
+            throw new Error(`GET request error: ${error.message}`);
+        });
+}
 
-module.exports = app;
+module.exports = { addNewItem, getToDoList };
